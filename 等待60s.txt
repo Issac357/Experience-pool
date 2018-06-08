@@ -31,3 +31,4 @@ var wait=60;
 					        }
 						};
 						time($getCodeButton);
+http://www.layui.com/doc/element/icon.html
