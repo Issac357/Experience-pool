@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn1">获取验证码</button>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$("#btn1").off("click").on("click", function(e){
+				var time = 60;
+                    $("#btn1").attr("disabled", true);
+                    $("#pswuser_name").attr("readonly", true);
+                    var timer = setInterval(function () {
+                        if (time === 0) {
+                            $("#pswuser_name").attr("readonly", false);
+                            $("#btn1").html("获取验证码");
+                            $("#btn1").attr("disabled", false);
+                            clearInterval(timer);
+                        } else {
+                            time -= 1;
+                            $("#btn1").html("重新发送(" + time + ")");
+                        }
+                    }, 1000);
+			})
+		</script>
+		
+		<button id="btn2">获取验证码</button>
+		<script>
+			var wait=60;
+			function time(o){
+		        if (wait == 0) {
+		            o.removeAttr("disabled");          
+		            o.html("获取验证码");
+		            wait = 60;
+		        } else {
+		            o.attr("disabled", "disabled");
+		            o.html("重新发送(" + wait + ")");
+		            wait--;
+		            setTimeout(function() {
+		                time($("#btn2"))
+		            },1000)
+		        }
+			};
+			$("#btn2").off("click").on("click", function(){
+				time($("#btn2"));
+			})
+			
+		</script>
+	</body>
+</html>
