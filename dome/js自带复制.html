@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>复制</title>
+	</head>
+	<body>
+		
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script>
+	
+	function copyContent(elementId) {  
+  
+	  // 动态创建 input 元素  
+	  var aux = document.createElement("input");  
+	  
+	  // 获得需要复制的内容  
+	  // input只能单行复制
+	  aux.setAttribute("value", document.getElementById(elementId).innerHTML);  
+	  
+	  // 添加到 DOM 元素中  
+	  document.body.appendChild(aux);  
+	  
+	  // 执行选中  
+	  // 注意: 只有 input 和 textarea 可以执行 select() 方法.  
+	  aux.select();  
+	    
+	  // 获得选中的内容  
+	  var content = window.getSelection().toString();  
+	      
+	  // 执行复制命令  
+	  document.execCommand("copy");  
+	  
+	  // 将 input 元素移除  
+	  document.body.removeChild(aux);  
+	  
+	}
+	
+	function copyContent(elementId) {  
+  
+	  // 动态创建 input 元素  
+	  var aux = document.createElement("textarea");  
+	  
+	  // 获得需要复制的内容  
+	  // textarea多行复制\n
+	  aux.setAttribute("value", document.getElementById(elementId).innerHTML);  
+	  
+	  // 添加到 DOM 元素中  
+	  document.body.appendChild(aux);  
+	  
+	  // 执行选中  
+	  // 注意: 只有 input 和 textarea 可以执行 select() 方法.  
+	  aux.select();  
+	    
+	  // 获得选中的内容  
+	  var content = window.getSelection().toString();  
+	      
+	  // 执行复制命令  
+	  document.execCommand("copy");  
+	  
+	  // 将 input 元素移除  
+	  document.body.removeChild(aux);  
+	  
+	}
+	
+	//eg
+	var aux = document.createElement("textarea");
+	$(aux).val('授权登录 en+\n授权账号：'+ 'user' +'\n授权码（密码）:'+ 'authPassword' +'\n生效时间：'+ 'startTime' +' 至 '+ 'endTime' +'\n请对此保密');
+	document.body.appendChild(aux);
+	aux.select();
+	var content = window.getSelection().toString();
+	document.execCommand("copy");
+	document.body.removeChild(aux);
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script>
+	//jquery 的监听input和textarea变化的方法
+	$('input').bind('input propertychange', function() {
+	    // ...
+	});
+	//jquery 的监听元素变化的方法
+	$('div').bind("DOMNodeInserted", function(){
+		// ...
+	});
+	var reg1 = /[^\d]/g; 
+	//  数字输入框
+	//	'<input type="text" onkeyup = value=value.replace('+ reg1 +',"") placeholder="请输入"/>'
+	
+</script>
