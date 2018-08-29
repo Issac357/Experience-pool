@@ -51,7 +51,7 @@ var reg1 = /[^\d]/g;
                                                     '<input type="text" id="numrange-max" onkeyup = value=value.replace('+ reg1 +',"") class="form-control" placeholder="请输入"/>'+
 
 
-function isJsonString(str) {
+function isJsonString(str) {//判断是否是对象
         try {
             if (typeof JSON.parse(str) == "object") {
                 return true;
@@ -116,7 +116,7 @@ var docElm = document.documentElement;
             }
 
 一个月 1号00:00:00到下一个月1号的00:00:00
-判断arr的一项排序
+判断arr的一项排序如果不是需要的顺序把a-b反过来
 arr.sort(function(a, b) {
     return b.isDefault - a.isDefault;
 });
