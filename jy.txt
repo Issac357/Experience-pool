@@ -1,0 +1,142 @@
+MVC +WebUploader 实现分片上传大文件
+https://www.cnblogs.com/baiyunchen/p/5383507.html
+
+使用Webuploader大文件分片传输
+https://www.cnblogs.com/25-lH/p/8398781.html
+
+
+navigator.vendor判断浏览器
+
+复制
+function copyContent(elementId) {  
+  
+  // 动态创建 input 元素  
+  var aux = document.createElement("input");  
+  
+  // 获得需要复制的内容  
+  aux.setAttribute("value", document.getElementById(elementId).innerHTML);  
+  
+  // 添加到 DOM 元素中  
+  document.body.appendChild(aux);  
+  
+  // 执行选中  
+  // 注意: 只有 input 和 textarea 可以执行 select() 方法.  
+  aux.select();  
+    
+  // 获得选中的内容  
+    var content = window.getSelection().toString();  
+      
+  // 执行复制命令  
+  document.execCommand("copy");  
+  
+  // 将 input 元素移除  
+  document.body.removeChild(aux);  
+  
+}
+
+var aux = document.createElement("textarea");
+	                    	$(aux).val('授权登录 en+\n授权账号：'+ user +'\n授权码（密码）:'+ authPassword +'\n生效时间：'+ startTime +' 至 '+ endTime +'\n请对此保密');
+	                    	document.body.appendChild(aux);
+	                    	aux.select();
+	                    	var content = window.getSelection().toString();
+	                    	document.execCommand("copy");
+	                    	document.body.removeChild(aux);
+
+
+
+$('#username').bind('input propertychange', function() {
+    $('#result').html($(this).val().length + ' characters');
+});
+var reg1 = /[^\d]/g; 
+                                                    '<input type="text" id="numrange-max" onkeyup = value=value.replace('+ reg1 +',"") class="form-control" placeholder="请输入"/>'+
+
+
+function isJsonString(str) {
+        try {
+            if (typeof JSON.parse(str) == "object") {
+                return true;
+            }
+        } catch(e) {
+        }
+        return false;
+    }
+
+只有document才能监听到esc keycode=27
+window不行
+全屏
+document.addEventListener("fullscreenchange", function(e) {
+  console.log("fullscreenchange", e);
+});
+document.addEventListener("mozfullscreenchange", function(e) {
+  console.log("mozfullscreenchange ", e);
+});
+document.addEventListener("webkitfullscreenchange", function(e) {
+  console.log("webkitfullscreenchange", e);
+});
+document.addEventListener("msfullscreenchange", function(e) {
+  console.log("msfullscreenchange", e);
+}
+//判断是否全屏
+function IsFull() {
+    var fullscreenElement =
+        document.fullscreenEnabled
+        || document.mozFullscreenElement
+        || document.webkitFullscreenElement;
+    var fullscreenEnabled =
+        document.fullscreenEnabled
+        || document.mozFullscreenEnabled
+        || document.webkitFullscreenEnabled;
+    if (fullscreenElement == null)
+    {
+        return false;
+    } else {
+        return true;
+    }
+}
+关闭全屏
+if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                }else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                }
+开启
+var docElm = document.documentElement;
+            if (docElm.requestFullscreen) {
+                docElm.requestFullscreen();
+            } else if (docElm.msRequestFullscreen) {
+                docElm.msRequestFullscreen();
+            } else if (docElm.mozRequestFullScreen) {
+                docElm.mozRequestFullScreen();
+            } else if (docElm.webkitRequestFullScreen) {
+                docElm.webkitRequestFullScreen();
+            }
+
+一个月 1号00:00:00到下一个月1号的00:00:00
+判断arr的一项排序
+arr.sort(function(a, b) {
+    return b.isDefault - a.isDefault;
+});
+打平数组
+function flattenMd(arr) {
+			            					var result = [];
+			            					for(var i = 0; i < arr.length; i++){
+			            						if(arr[i].nodes instanceof Array){
+			            							result.push(arr[i]);
+			            							result = result.concat(flattenMd(arr[i].nodes));
+			            						} else {
+			            							result.push(arr[i]);
+			            						}
+		            						}
+			            					return result;
+			            				};
+
+arr[sortNum].sort(function(b, a) {//数组排序
+                	var arra = JSON.parse(a.picData.picDataList[0].picSize);
+                	var arrb = JSON.parse(b.picData.picDataList[0].picSize);
+                	
+				    return arrb.y - arra.y;
+				});
