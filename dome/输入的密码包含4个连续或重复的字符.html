@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var re = /(\w)*(\w)\2{3}(\w)*/g;
+	var shuzi = ["1234", "2345", "3456", "4567", "5678", "6789", "7890"];
+	var zimu = "abcdefghijklmnopqrstuvwxyz";
+	var daxie = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	
+	function funarr(data){
+		var arr = [];
+		for(var i = 0; i < 23; i++){
+			var str = data.substring(0,4);
+			arr.push(str);
+			data = data.substring(1);
+		}
+		console.log(arr);
+		return arr;
+	}
+	var panduanzimu = funarr(zimu);
+	var panduanzimuda = funarr(daxie);
+	var mima = "";
+	function mimayan(passw){
+		for(var i in shuzi){
+			if(passw.indexOf(shuzi[i])>-1){
+				return false;
+			}
+		}
+		for(var i in panduanzimu){
+			if(passw.indexOf(panduanzimu[i])>-1){
+				return false;
+			}
+		}
+		for(var i in panduanzimuda){
+			if(passw.indexOf(panduanzimuda[i])>-1){
+				return false;
+			}
+		}
+		return true;
+	}
+	var a = mimayan(mima)
+	alert(a)
+	
+//	if(!re.test('aaaabcsasaadsso'))
+//	{
+//	    alert('符合要求！');
+//	}
+//	else
+//	{
+//	    alert('不允许有连续4位!');
+//	}
+</script>
