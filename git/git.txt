@@ -1,0 +1,22 @@
+git add .
+git commit -m ""
+git push origin 分支
+
+git merge 分支
+1.按键盘字母 i 进入insert模式
+
+2.修改最上面那行黄色合并信息,可以不修改
+
+3.按键盘左上角"Esc"
+
+4.输入":wq",注意是冒号+wq,按回车键即可
+
+
+
+
+git reset --hard HEAD^ 回退一个版本
+git checkout zhangjh 切换分支
+git merge master 合并主线 解决冲突 提交
+git add .
+git commit -m ""
+git push origin 分支
