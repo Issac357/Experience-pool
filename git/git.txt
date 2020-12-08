@@ -20,3 +20,15 @@ git merge master 合并主线 解决冲突 提交
 git add .
 git commit -m ""
 git push origin 分支
+
+
+// 在项目文件夹内执行以下命令
+	1.git init //初始化一个本地仓库
+	
+	2.git add ./ //将所有文件添加至本地仓库的门口
+	
+	3.git commit -m "上传备注信息"
+	
+	4.git remote add origin 你的空间git链接
+	
+	5.git push -u origin master 
