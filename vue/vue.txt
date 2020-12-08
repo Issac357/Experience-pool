@@ -1,0 +1,95 @@
+1.在{{}}中使用< >比较的时候 用t-text();来显示；
+2.cliclItem2($event, item)既获取事件对象，又获取参数
+3.@click.stop 阻止事件冒泡方法
+4.@click.prevent取消默认事件方法
+5.@click.stop.prevent
+。once 一次点击事件
+6.this.$set(element, "shadow", false);  添加新的监听属性
+7. 数据处理 和 dom操作的 先后
+this.nextTick(function(){
+                alert('数据已经更新')
+            });
+            this.$nextTick(function(){
+                alert('v-for渲染已经完成')
+            })
+8. v-for 的 key 需要 唯一值，不然splice后会有问题，用键值对有时候会有问题
+
+css
+
+水平居中 绝对定位left: 50%;
+        transform: translate(-50%);
+
+水平 垂直居中left: 50%;
+        transform: translate(-50px,-50%);
+平滑回到顶部
+document.getElementsByClassName("enlis")[0].scroll(0,0)
+html,body{
+
+scroll-behavior:smooth;
+
+}
+
+准确的说，写在容器元素上，可以让容器（非鼠标手势触发）的滚动变得平滑，而不局限于，标签。
+
+15578881235 消息数据
+16388670
+18712340003 魔钥数据
+全屏监听
+    document.addEventListener(
+      "fullscreenchange",
+      () => {
+        if (document.fullscreen) {
+          // 全屏后执行的代码
+          This.finish();
+        } else {
+          // 退出全屏后要执行的代码
+          This.closeFull();
+        }
+      },
+      false
+    );
+
+    document.addEventListener(
+      "mozfullscreenchange",
+      () => {
+        // fir
+        if (document.mozFullScreen) {
+          // 全屏后要执行的代码
+          This.finish();
+        } else {
+          // 退出全屏后要执行的代码
+          This.closeFull();
+        }
+      },
+      false
+    );
+
+    document.addEventListener(
+      "webkitfullscreenchange",
+      () => {
+        // guge
+        if (document.webkitIsFullScreen) {
+          // 全屏后要执行的代码
+          This.finish();
+        } else {
+          This.closeFull();
+          // 退出全屏后执行的代码
+        }
+      },
+      false
+    );
+
+    document.addEventListener(
+      "msfullscreenchange",
+      () => {
+        // ie
+        if (document.msFullscreenElement) {
+          // 全屏后要执行的代码
+          This.finish();
+        } else {
+          // 退出全屏后要执行的代码
+          This.closeFull();
+        }
+      },
+      false
+    );
